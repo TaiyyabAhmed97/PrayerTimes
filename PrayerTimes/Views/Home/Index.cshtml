@@ -3,18 +3,23 @@
     ViewBag.Title = "Home Page";
 }
 
-<ul>
+<ul>@{ 
+    int i = 0;
+}
     @foreach (var Masjid in Model.Masjids)
     {
-        <li>@Masjid.Name</li>
+        var name = Masjid.Name;
+        var masjid1 = Model.Masjids[i];
+        
+        <li>@Html.ActionLink(name, "Masjid", "Home", masjid1, null)</li>
         <li>
-            <p style="margin-left: 40px">Fajr: @Masjid.Fajr.ToString("hh:mm") AM</p>
+            <p style="margin-left: 40px">Fajr: @Masjid.Fajr.ToString("hh:mm") AM</p> 
             <p style="margin-left: 40px">Zuhr: @Masjid.Zuhr.ToString("hh:mm") PM</p>
-            <p style="margin-left: 40px">Asr: @Masjid.Asr.ToString("h:mm") PM</p>
+            <p style="margin-left: 40px">Asr: @Masjid.Asr.ToString("hh:mm") PM</p>
             <p style="margin-left: 40px">Maghrib: @Masjid.Maghrib.ToString("hh:mm") PM</p>
             <p style="margin-left: 40px">Isha: @Masjid.Isha.ToString("hh:mm") PM</p>
         </li>
-        
+        i++;
     }
 </ul>
 

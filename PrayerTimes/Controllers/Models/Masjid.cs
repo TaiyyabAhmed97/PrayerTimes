@@ -12,6 +12,10 @@ namespace PrayerTimes.Models
 
         public string Name { get; set; }
 
+        public string Address { get; set; }
+
+        public string PHnum { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:HH:mm}")]
         public DateTime Fajr { get; set; }
 

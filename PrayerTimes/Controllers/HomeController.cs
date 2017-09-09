@@ -15,6 +15,8 @@ namespace PrayerTimes.Controllers
             var Jame = new Masjid()
             {
                 Name = "Jamia Masjid",
+                Address = "2724 W granville ave 60659",
+                PHnum = "123456789",
                 Fajr = DateTime.Parse("5:20 AM"),
                 Zuhr = DateTime.Parse("1:15 PM"),
                 Asr = DateTime.Parse("6:30 PM"),
@@ -25,6 +27,8 @@ namespace PrayerTimes.Controllers
             var REA = new Masjid()
             {
                 Name = "Rahmat-E-Alam",
+                Address = "3673 w northshore ave 60702",
+                PHnum = "91234567",
                 Fajr = DateTime.Parse("5:00 AM"),
                 Zuhr = DateTime.Parse("1:10 PM"),
                 Asr = DateTime.Parse("6:20 PM"),
@@ -35,6 +39,8 @@ namespace PrayerTimes.Controllers
             var Noor = new Masjid()
             {
                 Name = "Masjid-E-Noor",
+                Address = "lol sumwhere on devon",
+                PHnum = "679374920",
                 Fajr = DateTime.Parse("5:00 AM"),
                 Zuhr = DateTime.Parse("1:10 PM"),
                 Asr = DateTime.Parse("6:20 PM"),
@@ -49,9 +55,12 @@ namespace PrayerTimes.Controllers
 
             return View(viewmodel);
         }
-           
-            
-        
+
+
+        public ActionResult Masjid(Masjid masjid)
+        {
+            return View(masjid);
+        }
 
         public ActionResult About()
         {
